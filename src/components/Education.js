@@ -6,16 +6,15 @@ function Education() {
   const educationData = [
     {
       degree: 'Bachelor of Technology',
-      institute: 'Your University Name',
-      duration: '2021 - 2025',
-      cgpa: '8.5 / 10',
-      semester: '6th Semester',
+      institute: 'CGC UNIVERSITY MOHALI',
+      duration: '2024 - 2028',
+      cgpa: '9.2 / 10',
+      semester: '4th Semester',
       coursework: [
         'Data Structures',
         'Web Development',
         'Database Management',
         'Software Engineering',
-        'Cloud Computing',
         'Machine Learning'
       ]
     }

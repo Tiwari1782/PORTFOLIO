@@ -10,7 +10,7 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-container">
-        <h1>Hi, I'm <span>Tiwari</span></h1>
+        <h1>Hi, I'm <span>Prakash</span></h1>
         <p className="subtitle">Computer Science Student | Full Stack Developer</p>
         <p className="description">
           I'm passionate about building modern web applications with clean code and great user experiences.  
