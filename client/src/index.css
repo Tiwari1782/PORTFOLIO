@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+/* ===== CUSTOM SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* ===== SMOOTH SCROLL ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================= */
+/*        DARK MODE (default)    */
+/* ============================= */
+:root, .dark {
+  --bg-primary: #0a0a1a;
+  --bg-secondary: #060612;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(0, 212, 255, 0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-muted: #9ca3af;
+  --text-dimmed: #6b7280;
+  --accent: #00d4ff;
+  --accent-hover: #00b8d9;
+  --accent-bg: rgba(0, 212, 255, 0.1);
+  --accent-border: rgba(0, 212, 255, 0.3);
+  --accent-shadow: rgba(0, 212, 255, 0.3);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --scrollbar-track: #0a0a1a;
+  --scrollbar-thumb: #00d4ff;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tag-text: #d1d5db;
+  --navbar-bg: rgba(10, 10, 26, 0.9);
+  --preloader-bg: #0a0a1a;
+  --gradient-blob-1: rgba(0, 212, 255, 0.2);
+  --gradient-blob-2: rgba(124, 58, 237, 0.2);
+}
+
+/* ============================= */
+/*          LIGHT MODE           */
+/* ============================= */
+.light {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(0, 0, 0, 0.03);
+  --bg-card-hover: rgba(0, 0, 0, 0.06);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(6, 182, 212, 0.4);
+  --text-primary: #0f172a;
+  --text-secondary: #1e293b;
+  --text-muted: #64748b;
+  --text-dimmed: #94a3b8;
+  --accent: #0891b2;
+  --accent-hover: #0e7490;
+  --accent-bg: rgba(8, 145, 178, 0.1);
+  --accent-border: rgba(8, 145, 178, 0.3);
+  --accent-shadow: rgba(8, 145, 178, 0.2);
+  --input-bg: rgba(0, 0, 0, 0.03);
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #0891b2;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --tag-text: #475569;
+  --navbar-bg: rgba(248, 250, 252, 0.9);
+  --preloader-bg: #f8fafc;
+  --gradient-blob-1: rgba(6, 182, 212, 0.15);
+  --gradient-blob-2: rgba(139, 92, 246, 0.15);
+}
+
+/* ============================= */
+/*        APPLY VARIABLES        */
+/* ============================= */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 4px;
+}
+
+/* ============================= */
+/*       CUSTOM ANIMATIONS       */
+/* ============================= */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent), #7c3aed, var(--accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* ============================= */
+/*       GLASS CARD STYLE        */
+/* ============================= */
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+  background: var(--bg-card-hover);
+}
