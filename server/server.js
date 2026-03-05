@@ -11,19 +11,17 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:3000",
+  "https://prakash-portfolio-nu.vercel.app",
   process.env.CLIENT_URL,
-].filter(Boolean); // removes undefined if CLIENT_URL not set
+].filter(Boolean);
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://prakash-portfolio-nu.vercel.app/",  // ✏️ Your actual Vercel URL
-    ],
-    credentials: true,
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
-
 // ✅ Middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
